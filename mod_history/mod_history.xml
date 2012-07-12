@@ -60,6 +60,7 @@ client="site">
 				name="prefix"
 				type="text"
 				label="Prefix"
+				default="History"
 				description="Text to display before breadcrumbs" />
 				<field
 				name="showHome"
@@ -76,6 +77,7 @@ client="site">
 				name="homeText"
 				type="text"
 				label="Home Text"
+				default="Home"
 				description="Home Text" />
 				<field
 				name="showLast"

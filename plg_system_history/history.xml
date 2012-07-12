@@ -23,7 +23,7 @@
 				<field
 				name="amount"
 				type="list"
-				default="3"
+				default="5"
 				label="Number to store"
 				description="This Number must be be greater than the number in the items to display in the module">
 					<option
