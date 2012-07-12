@@ -1,141 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension
-	type="module"
-	version="2.5"
-	method="upgrade"
-	client="site">
-	<name>mod_history</name>
-	<author>Chris French</author>
+type="module"
+version="2.5"
+method="upgrade"
+client="site">
+	<name>History Breadcrumbs - Module</name>
+	<author>Dioscouri</author>
+	<authorEmail>info@dioscouri.com</authorEmail>
+	<authorUrl>http://www.dioscouri.com</authorUrl>
 	<creationDate>April 2012</creationDate>
 	<copyright>Copyright (C) 2005 - 2012 Open Source Matters. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<authorEmail>cfrench@diosourci.com</authorEmail>
-	<authorUrl>www.diosourci.com</authorUrl>
 	<version>2.5.0</version>
-	<description></description>
+	<description>MOD_HISTORY_DESC</description>
 	<files>
 		<filename module="mod_history">mod_history.php</filename>
 		<filename module="mod_history">helper.php</filename>
 		<filename>index.html</filename>
 		<folder>tmpl</folder>
-	
+
 	</files>
 	<languages>
 		<language tag="en-GB">en-GB.mod_history.ini</language>
 		<language tag="en-GB">en-GB.mod_history.sys.ini</language>
 	</languages>
-
 	<help key="JHELP_EXTENSIONS_MODULE_MANAGER_CUSTOM_HTML" />
 	<config>
 		<fields name="params">
-					
-			
 			<fieldset name="basic">
 				<field
-					name="amount"
-					type="list"
-					default="3"
-					label="Number to Display"
-					description="">
+				name="amount"
+				type="list"
+				default="3"
+				label="Number to Display"
+				description="">
 					<option
-						value="1">1</option>
+					value="1">1</option>
 					<option
-						value="2">2</option>
-						<option
-						value="3">3</option>
+					value="2">2</option>
 					<option
-						value="4">4</option>
-						<option
-						value="5">5</option>
+					value="3">3</option>
+					<option
+					value="4">4</option>
+					<option
+					value="5">5</option>
 				</field>
 				<field
-					name="showPrefix"
-					type="radio"
-					default="1"
-					label="Show Prefix"
-					description="Show prefix?">
+				name="showPrefix"
+				type="radio"
+				default="1"
+				label="Show Prefix"
+				description="Show prefix?">
 					<option
-						value="0">JNO</option>
+					value="0">JNO</option>
 					<option
-						value="1">JYES</option>
-				</field>
-                <field
-                    name="prefix"
-                    type="text"
-                    label="Prefix"
-                    description="Text to display before breadcrumbs" />
-				<field
-					name="showHome"
-					type="radio"
-					default="1"
-					label="Show Home"
-					description="Show Home">
-					<option
-						value="0">JNO</option>
-					<option
-						value="1">JYES</option>
+					value="1">JYES</option>
 				</field>
 				<field
-					name="homeText"
-					type="text"
-					label="Home Text"
-					description="Home Text" />
+				name="prefix"
+				type="text"
+				label="Prefix"
+				description="Text to display before breadcrumbs" />
 				<field
-					name="showLast"
-					type="radio"
-					default="1"
-					label="Show Last"
-					description="Show last item">
+				name="showHome"
+				type="radio"
+				default="1"
+				label="Show Home"
+				description="Show Home">
 					<option
-						value="0">JNO</option>
+					value="0">JNO</option>
 					<option
-						value="1">JYES</option>
+					value="1">JYES</option>
 				</field>
 				<field
-					name="separator"
-					type="text"
-					label="Separator"
-					description="MOD_BREADCRUMBS_FIELD_SEPARATOR_DESC" />
-				
+				name="homeText"
+				type="text"
+				label="Home Text"
+				description="Home Text" />
+				<field
+				name="showLast"
+				type="radio"
+				default="1"
+				label="Show Last"
+				description="Show last item">
+					<option
+					value="0">JNO</option>
+					<option
+					value="1">JYES</option>
+				</field>
+				<field
+				name="separator"
+				type="text"
+				label="Separator"
+				description="MOD_BREADCRUMBS_FIELD_SEPARATOR_DESC" />
+
 			</fieldset>
 			<fieldset
-				name="advanced">
+			name="advanced">
 				<field
-					name="layout"
-					type="modulelayout"
-					label="JFIELD_ALT_LAYOUT_LABEL"
-					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
-
+				name="layout"
+				type="modulelayout"
+				label="JFIELD_ALT_LAYOUT_LABEL"
+				description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
 				<field
-					name="moduleclass_sfx"
-					type="text"
-					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
-					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
-
+				name="moduleclass_sfx"
+				type="text"
+				label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+				description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
 				<field
-					name="cache"
-					type="list"
-					default="1"
-					label="COM_MODULES_FIELD_CACHING_LABEL"
-					description="COM_MODULES_FIELD_CACHING_DESC">
+				name="cache"
+				type="list"
+				default="1"
+				label="COM_MODULES_FIELD_CACHING_LABEL"
+				description="COM_MODULES_FIELD_CACHING_DESC">
 					<option
-						value="1">JGLOBAL_USE_GLOBAL</option>
+					value="1">JGLOBAL_USE_GLOBAL</option>
 					<option
-						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+					value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
 				</field>
-
 				<field
-					name="cache_time"
-					type="text"
-					default="900"
-					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
-					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				name="cache_time"
+				type="text"
+				default="900"
+				label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+				description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
 				<field
-					name="cachemode"
-					type="hidden"
-					default="static">
+				name="cachemode"
+				type="hidden"
+				default="static">
 					<option
-						value="static"></option>
+					value="static"></option>
 				</field>
 			</fieldset>
 		</fields>

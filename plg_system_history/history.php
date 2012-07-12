@@ -1,14 +1,17 @@
 <?php
+/**
+ * @version	1.5
+ * @package	History Plugin
+ * @subpackage	System.remember
+ * @author 	Dioscouri Design
+ * @link 	http://www.dioscouri.com
+ * @copyright Copyright (C) 2007 Dioscouri Design. All rights reserved.
+ * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL, see LICENSE.php
+*/
 
 // no direct access
 defined('_JEXEC') or die;
 
-/**
- * Joomla! System History Plugin
- *
- * @package		Joomla.Plugin
- * @subpackage	System.remember
- */
 class plgSystemHistory extends JPlugin
 {
 	
@@ -21,12 +24,9 @@ class plgSystemHistory extends JPlugin
 		if ($app->isAdmin()) {
 			return;
 		}
-		
 		//check if already set if not make one
 		$historyObject = $app->getUserState( "history");
-		
 		$historyObject = $this->makehistory($historyObject);
-		
 		$app->setUserState('history', $historyObject);
 		
 	}
@@ -39,10 +39,6 @@ class plgSystemHistory extends JPlugin
 		$array = array();
 		$array['link'] = JFactory::getURI()->toString();
 		$array['name'] = $doc->getTitle();
-		//this could be useful i think
-		//$array['datetime'] = new JDate();
-		//$array['datetime'] = JFactory::getDate();
-		
 		
 		if(empty($hisObj)) {
 			//if the history object is new create an empty array to hold arrays, encode so  next decode is always decoding
@@ -66,8 +62,6 @@ class plgSystemHistory extends JPlugin
 		}
 		// we need to rebuild our array because it could be missing keys now
 		
-		
-		
 		//lets keep the number of items in the session small
 		
 		if(count($newhistory) >= $this->params->get('amount')){
@@ -78,7 +72,6 @@ class plgSystemHistory extends JPlugin
 		} else {
 			array_push($newhistory,$array);
 		}
-		//$newhistory[] = $array;
 		$newhistory = json_encode($newhistory);		
 		
 		return $newhistory;		
