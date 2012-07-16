@@ -11,7 +11,7 @@ client="site">
 	<creationDate>April 2012</creationDate>
 	<copyright>Copyright (C) 2005 - 2012 Open Source Matters. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>2.5.0</version>
+	<version>1.0.0</version>
 	<description>MOD_HISTORY_DESC</description>
 	<files>
 		<filename module="mod_history">mod_history.php</filename>
